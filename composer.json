@@ -1,0 +1,78 @@
+{
+    "name": "weez/field",
+    "description": "Description of project Field.",
+    "authors": [
+        {
+            "name": "T.ED",
+            "email": "t.erembertdubal@weezevent.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.5",
+        "components/jquery": "~2",
+        "components/bootstrap": "3.3.6",
+        "uxder/Radio": "dev-master",
+        "akottr/dragtable": "dev-master",
+        "twig/twig": "dev-master",
+        "components/jqueryui": "^1.12"
+    },
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "uxder/Radio",
+                "type": "component",
+                "version": "master",
+                "dist": {
+                    "url": "https://github.com/uxder/Radio/archive/master.zip",
+                    "type": "zip"
+                },
+                "source": {
+                    "url": "https://github.com/uxder/Radio.git",
+                    "type": "git",
+                    "reference": "master"
+                },
+                "extra": {
+                    "component": {
+                        "scripts": [
+                            "radio.min.js"
+                        ]
+                    }
+                },
+                "require": {
+                    "robloach/component-installer": "*"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "akottr/dragtable",
+                "type": "component",
+                "version": "master",
+                "dist": {
+                    "url": "https://github.com/akottr/dragtable/archive/master.zip",
+                    "type": "zip"
+                },
+                "source": {
+                    "url": "git@github.com:akottr/dragtable.git",
+                    "type": "git",
+                    "reference": "master"
+                },
+                "extra": {
+                    "component": {
+                        "scripts": [
+                            "jquery.dragtable.js"
+                        ],
+                        "styles": [
+                            "dragtable.css"
+                        ]
+                    }
+                },
+                "require": {
+                    "robloach/component-installer": "*"
+                }
+            }
+        }
+    ]
+}

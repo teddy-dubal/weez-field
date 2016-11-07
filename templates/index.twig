@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Field</title>
+        <link rel="stylesheet" href="/components/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/components/bootstrap/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="/components/jquery-ui/themes/base/all.css">
+        <link rel="stylesheet" href="/components/dragtable/dragtable.css">
+        <link rel="stylesheet" href="/assets/css/index.css" type="text/css">
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-4">
+                    <input id="title" name="title" type="text" placeholder="Titre" required autofocus>
+                </div>
+                <div class="col-md-4">
+                    <a class="btn btn-default" href="#" id="add" role="button">Nouveau</a>
+                </div>
+                <div class="col-md-4">
+                    <select name="list_tpl">
+                        <option value="volvo">Volvo</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12" id="field_list">
+                    <label>
+                        <input type="checkbox" name="f1" value="1"> F1
+                    </label>
+                    <label>
+                        <input type="checkbox" name="f2" value="1"> F2
+                    </label>
+                    <label>
+                        <input type="checkbox" name="f3" value="1"> F3
+                    </label>
+                    <label>
+                        <input type="checkbox" name="f4" value="1"> F4
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <table class="table" id="table">
+                        <thead>
+                            <tr>
+                                <th>#</th> <th>First Name</th> <th>Last Name</th> <th>Username</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th> <td>Mark</td> <td>Otto</td> <td>@mdo</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="/components/jquery/jquery.min.js"></script>
+        <script src="/components/jquery-ui/jquery-ui.min.js"></script>
+        <script src="/components/bootstrap/js/bootstrap.min.js"></script>
+        <script src="/components/dragtable/jquery.dragtable.js"></script>
+        <script src="/components/Radio/radio.min.js"></script>
+        <script src="/assets/js/index.js"></script>
+    </body>
+</html>

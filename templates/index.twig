@@ -18,27 +18,29 @@
                     <input id="title" name="title" type="text" placeholder="Titre" required autofocus>
                 </div>
                 <div class="col-md-4">
-                    <a class="btn btn-default" href="#" id="add" role="button">Nouveau</a>
+                    <a class="btn btn-default" href="#" id="add_tpl" role="button" data-default_tpl="{{defaultTpl|json_encode()}}">Nouveau</a>
                 </div>
                 <div class="col-md-4">
-                    <select name="list_tpl">
-                        <option value="volvo">Volvo</option>
+                    <select class="form-control" name="list_tpl" id="list_tpl">
+                        {% for files in persoFiles %}
+                            <option value="{{files}}">{{ files }}</option>
+                        {% endfor %}
                     </select>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12" id="field_list">
                     <label>
-                        <input type="checkbox" name="f1" value="1"> F1
+                        <input type="checkbox" name="f1" id="f1" data-lip="F1" data-header="F1"> F1
                     </label>
                     <label>
-                        <input type="checkbox" name="f2" value="1"> F2
+                        <input type="checkbox" name="f2" id="f2" data-lip="F2" data-header="F2"> F2
                     </label>
                     <label>
-                        <input type="checkbox" name="f3" value="1"> F3
+                        <input type="checkbox" name="f3" id="f3" data-lip="F3" data-header="F3"> F3
                     </label>
                     <label>
-                        <input type="checkbox" name="f4" value="1"> F4
+                        <input type="checkbox" name="f4" id="f4" data-lip="F4" data-header="F4"> F4
                     </label>
                 </div>
             </div>
@@ -47,24 +49,31 @@
                     <table class="table" id="table">
                         <thead>
                             <tr>
-                                <th>#</th> <th>First Name</th> <th>Last Name</th> <th>Username</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <th scope="row">1</th> <td>Mark</td> <td>Otto</td> <td>@mdo</td>
+                            </tr>
+                            <tr>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
         </div>
-        <!-- Latest compiled and minified JavaScript -->
-        <script src="/components/jquery/jquery.min.js"></script>
-        <script src="/components/jquery-ui/jquery-ui.min.js"></script>
-        <script src="/components/bootstrap/js/bootstrap.min.js"></script>
-        <script src="/components/dragtable/jquery.dragtable.js"></script>
-        <script src="/components/Radio/radio.min.js"></script>
-        <script src="/assets/js/index.js"></script>
-    </body>
+        <div class="row">
+            <div class="col-md-12">
+                <button type="button" class="btn btn-primary" id="save_tpl">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="/components/jquery/jquery.min.js"></script>
+    <script src="/components/jquery-ui/jquery-ui.min.js"></script>
+    <script src="/components/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/components/dragtable/jquery.dragtable.js"></script>
+    <script src="/components/Radio/radio.min.js"></script>
+    <script src="/assets/js/index.js"></script>
+</body>
 </html>

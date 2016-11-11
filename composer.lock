@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "43571e9be271e4bd75a40a924b9a599e",
-    "content-hash": "8bdff1c1b16f259c08e27b6cc7eccd8d",
+    "hash": "a905075eaf494f6518f7a1e1faae5386",
+    "content-hash": "058c88c59165b4601329cbc522847868",
     "packages": [
         {
             "name": "akottr/dragtable",
@@ -471,12 +471,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "ce6e26c90c1356ad5da8586b1f8a7e6384f262f3"
+                "reference": "04002932c110504cc0dd92dbfec553ca12bceb5f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/ce6e26c90c1356ad5da8586b1f8a7e6384f262f3",
-                "reference": "ce6e26c90c1356ad5da8586b1f8a7e6384f262f3",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/04002932c110504cc0dd92dbfec553ca12bceb5f",
+                "reference": "04002932c110504cc0dd92dbfec553ca12bceb5f",
                 "shasum": ""
             },
             "require": {
@@ -525,7 +525,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2016-10-25 17:31:51"
+            "time": "2016-11-10 19:34:01"
         },
         {
             "name": "uxder/Radio",

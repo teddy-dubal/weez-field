@@ -1,12 +1,20 @@
 var WeezFieldEngine = (function ($) {
 
     var _debug = true;
+    /**
+     *
+     * @returns {undefined}
+     */
     var initTable = function () {
         var $table = $('#table');
         var initData = $('#add_tpl').data('default_tpl');
         Marray.fromObject($table, initData);
         $table.dragtable().dragtable('destroy').dragtable();
     };
+    /**
+     *
+     * @returns {undefined}
+     */
     var initManageField = function () {
         $('#field_list input').change(function () {
             var $elt = $(this);
@@ -19,6 +27,10 @@ var WeezFieldEngine = (function ($) {
             }
         });
     };
+    /**
+     *
+     * @returns {undefined}
+     */
     var initButton = function () {
         var ajaxObj = {
             type: "POST",
@@ -35,22 +47,40 @@ var WeezFieldEngine = (function ($) {
             $.getJSON(url, function (data) {
                 var $table = $('#table');
                 Marray.fromObject($table, data);
+                $table.dragtable('destroy').dragtable();
             });
         });
         $("#save_tpl").click(function () {
             var $table = $('#table');
             ajaxObj.url = 'ajax/save.php';
+            if ($.isEmptyObject($('#title').val()) && $.isEmptyObject($('#list_tpl').val())) {
+                alert('add a title');
+                return false;
+            }
+            ajaxObj.data.file = $('#list_tpl').val();
+            ajaxObj.data.title = $('#title').val();
             ajaxObj.data.json = Marray.toJson($table);
             $.ajax(ajaxObj).done(function (msg) {
-                console.info("Data Saved: ");
+                console.info("Data Saved");
             });
         });
+    };
+    var marrayAddRow = function (obj) {
+        $('#field_list input#' + obj.id).prop("checked", true);
+    };
+    /**
+     *
+     * @returns {undefined}
+     */
+    var initPubsub = function () {
+        radio('marray.add.column').subscribe(marrayAddRow);
     };
     /**
      *
      * @returns {undefined}
      */
     var init = function () {
+        initPubsub();
         initTable();
         initManageField();
         initButton();
@@ -77,7 +107,7 @@ var Marray = (function ($) {
     },
     prefixCol = 'c_',
             prefixRow = 'r_',
-            prefixLip = 'r_';
+            prefixLip = 'l_';
     var removeColumn = function ($elt, id) {
         $elt.find('tr:first th').each(function (index, item) {
             if ($(item).attr('id') == prefixCol + id) {
@@ -93,6 +123,7 @@ var Marray = (function ($) {
         $elt.find('tr:first').append('<th class="h" data-id="' + options.id + '" id="' + prefixCol + options.id + '">' + options.header + '</th>');
         $elt.find('tr:eq(1)').append('<td class="r" data-id="' + options.id + '" id="' + prefixRow + options.id + '">' + options.headerCode + '</td>');
         $elt.find('tr:eq(2)').append('<td class="l" data-id="' + options.id + '" id="' + prefixLip + options.id + '">' + options.headerLip + '</td>');
+        radio('marray.add.column').broadcast(options);
         return this;
     };
     var toJson = function ($elt) {

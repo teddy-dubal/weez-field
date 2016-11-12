@@ -9,7 +9,9 @@ if (empty($_POST)) {
     die('No Hack');
 }
 $elt   = $_POST['json'];
-$files = $rootDir . '/data/perso/' . date('YmdHis') . '.json';
+$file  = $_POST['file'] ? : date('YmdHis') . '.json';
+$title = $_POST['title'];
+$files = $rootDir . '/data/perso/' . $file;
 
 if (file_put_contents($files, $elt)) {
     echo 'OK';

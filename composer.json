@@ -20,33 +20,6 @@
         {
             "type": "package",
             "package": {
-                "name": "shabeer-ali-m/jPut",
-                "type": "component",
-                "version": "master",
-                "dist": {
-                    "url": "https://github.com/shabeer-ali-m/jPut/archive/master.zip",
-                    "type": "zip"
-                },
-                "source": {
-                    "url": "https://github.com/shabeer-ali-m/jPut.git",
-                    "type": "git",
-                    "reference": "master"
-                },
-                "extra": {
-                    "component": {
-                        "scripts": [
-                            "js/**"
-                        ]
-                    }
-                },
-                "require": {
-                    "robloach/component-installer": "*"
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
                 "name": "akottr/dragtable",
                 "type": "component",
                 "version": "master",
